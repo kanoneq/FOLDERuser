@@ -4,6 +4,10 @@ rem WAZNE! jesli nie jestes na PC'cie kanonq'a to pamietaj, aby zmienic sciezki 
 color 0a
 cls
 
+if not exist "./papiez.txt" (
+    echo where papiez
+    exit /b
+)
 type "./papiez.txt" 
 
 goto start
