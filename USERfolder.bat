@@ -3,6 +3,13 @@ rem WAZNE! jesli nie jestes na PC'cie kanonq'a to pamietaj, aby zmienic sciezki 
 @echo off
 color 0a
 cls
+
+if not exist ".\papiez.txt" (
+    echo where papiez
+    exit /b
+)
+type ".\papiez.txt" 
+
 goto start
 
 :emergency start
