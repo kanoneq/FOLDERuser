@@ -127,3 +127,4 @@ endlocal
 
 :finallboss
 start "" ".\tukan.jpg"
+pause>nul
