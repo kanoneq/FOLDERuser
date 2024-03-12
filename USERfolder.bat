@@ -3,6 +3,9 @@ rem WAZNE! jesli nie jestes na PC'cie kanonq'a to pamietaj, aby zmienic sciezki 
 @echo off
 color 0a
 cls
+
+type "./papiez.txt" 
+
 goto start
 
 :emergency start
