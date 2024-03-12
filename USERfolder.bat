@@ -25,6 +25,7 @@ set /p wybor=
 if %wybor%==1 goto :tworzenie
 if %wybor%==2 goto :dodawanie
 if %wybor%==3 goto :zmienianie
+if %wybor%==tukan goto :toucan
 echo nie wybrano kompatybilnej warosci
 goto emergency start
 endlocal
@@ -111,3 +112,18 @@ endlocal
 echo.
 echo to wszystko, dzieki
 pause>nul
+
+:toucan
+setlocal
+set /p wybor=
+if %wybor%==tukan goto letukan
+endlocal
+
+:letukan
+setlocal
+set/p wybor=
+if %wybor%==tukan goto finallboss
+endlocal
+
+:finallboss
+start "" ".\tukan.jpg"
