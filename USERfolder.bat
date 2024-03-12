@@ -36,7 +36,7 @@ setlocal
 echo podaj nazwe katalogu ktory chcesz utworzyc
 set /p nazwa=
 if %nazwa%==cancel goto tworzenie
-mkdir "C:\Users\kanoneq\Desktop\FolderyUserow\%nazwa%"
+mkdir ".\FolderyUserow\%nazwa%"
 echo podkatalog %nazwa% zostal utworzony w katalogu "foldery userow"
 echo.
 echo jesli chcesz to mozesz stworzyc tez plik tekstowy w swoim nowym katalogu, jesli nie chcesz, to wpisz "nie"
@@ -44,7 +44,7 @@ echo jesli chcesz to wpisz nazwe tego pliku
 set /p notatnik=
 if %notatnik%==cancel goto tworzenie
 if %notatnik%==nie goto koniec
-type nul>"C:\Users\kanoneq\Desktop\FolderyUserow\%nazwa%\%notatnik%.txt"
+type nul>".\FolderyUserow\%nazwa%\%notatnik%.txt"
 echo.
 echo zostal utworzony plik tekstowy o nazwe %notatnik% w twoim katalogu %nazwa%
 goto koniec
@@ -59,8 +59,8 @@ echo.
 echo wpisz nazwe pliku tekstowego ktory chcesz zalozyc
 set /p pliczek=
 if %cancel%==cancel goto dodawanie
-type nul>"C:\Users\kanoneq\Desktop\FolderyUserow\%katalog%\%pliczek%.txt"
-if not exist "C:\Users\kanoneq\Desktop\FolderyUserow\%katalog%" (
+type nul>".\FolderyUserow\%katalog%\%pliczek%.txt"
+if not exist ".\FolderyUserow\%katalog%" (
 nie ma takiego folderu
 goto emergency start
 )
@@ -91,11 +91,11 @@ echo.
 echo podaj nowa nazwe dla swojego pliku tekstowego
 set /p txtN=
 if %txtN%==cancel goto tekstowy
-if not exist "C:\Users\kanoneq\Desktop\FolderyUserow\%folder%\%tekstowy%.txt" (
+if not exist ".\FolderyUserow\%folder%\%tekstowy%.txt" (
 echo nie ma takiego folderu, pliku tekstowego lub obydwu
 goto emergency start
 )
-ren "C:\Users\kanoneq\Desktop\FolderyUserow\%folder%\%tekstowy%.txt" "%txtN%.txt"
+ren ".\FolderyUserow\%folder%\%tekstowy%.txt" "%txtN%.txt"
 echo zmiana przebiegla pomyslnie
 goto koniec
 endlocal
@@ -110,19 +110,14 @@ echo.
 echo wybierz nowa nazwe dla twojego folderu
 set /p nazwa=
 if %nazwa%==cancel goto folder
-if not exist "C:\Users\kanoneq\Desktop\FolderyUserow\%folder%" (
+if not exist ".\FolderyUserow\%folder%" (
 echo taki folder nie istnieje
 goto emergency start
 )
-ren "C:\Users\kanoneq\Desktop\FolderyUserow\%folder%" "%nazwa%"
+ren ".\FolderyUserow\%folder%" "%nazwa%"
 echo operacja przebiegla pomyslnie
 goto koniec
 endlocal
-
-:koniec
-echo.
-echo to wszystko, dzieki
-pause>nul
 
 :toucan
 setlocal
@@ -138,4 +133,9 @@ endlocal
 
 :finallboss
 start "" ".\tukan.jpg"
+goto koniec
+
+:koniec
+echo.
+echo to wszystko, dzieki
 pause>nul
