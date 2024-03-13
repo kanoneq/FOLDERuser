@@ -1,5 +1,3 @@
-rem WAZNE! jesli nie jestes na PC'cie kanonq'a to pamietaj, aby zmienic sciezki w kodzie
-
 @echo off
 color 0a
 cls
